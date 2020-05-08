@@ -6,15 +6,22 @@
 'use strict';
 
 // Modules
-const requestPlugin = require('@overlook/plugin-request');
+const Plugin = require('@overlook/plugin'),
+	requestPlugin = require('@overlook/plugin-request');
 
 // Init
 require('./support/index.js');
 
 // Tests
 
-describe('tests', () => {
-	it.skip('all', () => { // eslint-disable-line jest/no-disabled-tests
-		expect(requestPlugin).not.toBeUndefined();
+describe('plugin', () => {
+	it('is a Plugin', () => {
+		expect(requestPlugin).toBeInstanceOf(Plugin);
+	});
+
+	describe('exposes symbols', () => {
+		it.each(['REQ_TYPE', 'PATH'])('%s', (name) => {
+			expect(typeof requestPlugin[name]).toBe('symbol');
+		});
 	});
 });

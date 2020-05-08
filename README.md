@@ -11,7 +11,14 @@ Part of the [Overlook framework](https://overlookjs.github.io/).
 
 ## Usage
 
-This module is under development and not ready for use yet.
+This plugin exports two symbols, which are used as the most basic properties of Overlook request objects:
+
+* `[REQ_TYPE]`
+* `[PATH]`
+
+For example, [@overlook/plugin-serve-http](https://www.npmjs.com/package/@overlook/plugin-serve-http) sets `req[REQ_TYPE]` to `'HTTP'` and records the request path as `req[PATH]`.
+
+This plugin should not actually be used as a plugin - `Route.extend( requestPlugin )` adds no methods to the Route and so is pointless. This "plugin" only exists to export symbols.
 
 ## Versioning
 
