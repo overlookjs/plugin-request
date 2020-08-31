@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.1.3
+
+Minor:
+
+* Drop support for Node v13
+
+Dependencies:
+
+* Update `@overlook/plugin` dependency
+
+Dev:
+
+* Update dev dependencies
+
 ## 0.1.2
 
 Improvements:
